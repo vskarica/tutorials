@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Crash Course | AJAX</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        body{
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            line-height: 1.5em;
+        }
+        header{
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px #000 solid;
+            margin-bottom: 10px;
+        }
+        #container {
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+        .myClass{
+            color: blue;
+            background: black;
+        }
+        #box{
+            background: #333;
+            color: #fff;
+            width: 500px;
+            height: 90px;
+            padding: 40px;
+            text-align: center;
+        }
+        #box2{
+            background: red;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <header>
+            <h1>jQuery Crash Course | AJAX</h1>
+        </header>
+        <div id='container'>
+            <div id="result"></div>
+            <ul id="users"></ul>
+            <h3>Ad post</h3>
+            <form id="postForm" dd="aa" action="https://jsonplaceholder.typicode.com/posts">
+                <input type="text" id="title" placeholder="Title">
+                <br>
+                <textarea id="body" placeholder="Body"></textarea>
+                <br>
+                <input type="submit" value="Submit">
+                <!--input type="button" id="button" value="Ok"-->
+            </form>
+        </div>
+        <script>
+            //live-server --port=8000
+            $("documment").ready(function(){
+                /*
+                $("#result").load("test.html", function(responseTxt, statusTxt, xhr){
+                    if(statusTxt=="success"){
+                        alert("AJAX dohvaćanje uspjelo!");
+                    }else if(statusTxt=="error"){
+                        alert("Error: "+xhr.statusTxt);
+                    }
+                })
+                
+                $.get("test.html",function(data){
+                    $("#result").html(data);
+                })
+                
+                $.getJSON("users.json", function(data){
+                    $.each(data,function(i, user){
+                        $("ul#users").append("<li>"+user.firstName +"</li>")
+                    })
+                })
+                
+                $.ajax({
+                    method:"GET",
+                    url:"https://jsonplaceholder.typicode.com/posts",
+                    dataType:"json"
+                }).done(function(data){
+                    $.map(data,function(post, i){
+                        $("#result").append("<h1>"+post.title +"</h1><p>"+post.body +"</p>")
+                    })
+                })
+                */
+                $("#postForm").submit(function(e){
+                //$("#button").click(function(e){
+                    e.preventDefault();
+                    //e.stopImmediatePropagation();
+                    var title =$("form #title").val();
+                    var body =$("form #body").val();
+                    //var url =$("form [action]").val();
+                    $(this).attr("action");
+                    //var url =$('#postForm').attr('action');
+                    var dd =$('#postForm').attr('dd');
+                    var ovo =$(this).prop("tagName")
+                    $("#result").append(title+"-<br>");
+                    $("#result").append(body+"-<br>");
+                    $("#result").append(url+"-<br>");
+                    $("#result").append(ovo+"-<br>");
+                    //$("#result").append(dd+"-<br>");
+                    //$("#result").append("--<br>");
+                    $.post(url,{
+                        title:title,
+                        body:body
+                    }).done(function(data){
+                        console.log("Sacuvan post!");
+                        console.log(data);
+                    });
+                })
+            });
+                
+        </script>
+    </body>
+</body>
+</html>

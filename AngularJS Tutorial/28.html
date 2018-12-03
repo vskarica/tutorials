@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>AngularJS | ng-show Directive</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script src="script28.js"></script>
+  </head>
+  <body ng-app="mainApp" ng-controller="app">
+    <h1 id="naslov">AngularJS | ng-show Directive</h1>
+    <button ng-click="toggle()">Toggle Message</button>
+    <div class="message" ng-show="show=='msg1'">
+      prva poruka
+    </div>
+    <div class="message" ng-show="show=='msg2'">
+      druga poruka
+    </div>
+  </body>
+</html>

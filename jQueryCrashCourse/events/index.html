@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Crash Course | events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        body{
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            line-height: 1.5em;
+        }
+        header{
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px #000 solid;
+            margin-bottom: 10px;
+        }
+        #container {
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <header>
+            <h1>jQuery Crash Course | events</h1>
+        </header>
+        <div id='container'>
+            <h3 id="heding1">Mouse events</h3>
+            <button id="btn1">Button 1</button>
+            <button id="btn2">Button 2</button>
+            <p class='para1'>
+                    jQuery CDN
+                    If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network).
+                    Both <span>Google and Microsoft</span> host jQuery.
+                    To use jQuery from Google or Microsoft, use one of the following:
+            </p>
+            <h1 id="coords"></h1>
+            <hr>
+            <form id="forma">
+                <label>Name</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label>Email</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label>Gender</label><br>
+                <select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="femile">Femile</option>
+                    </select>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <script>
+                $("documment").ready(function(){
+/*                    $("#btn1").click(function(){
+                        //$(".para1").hide();
+                        $(".para1").toggle();
+                    });
+                    $("#btn2").click(function(){
+                        $(".para1").show();
+                    });
+
+                    $("#btn1").dblclick(function(){
+                        $(".para1").toggle();
+                    });
+                    $("#btn1").hover(function(){
+                        $(".para1").toggle();
+                    });
+                    $("#btn1").mousemove(function(){
+                        $(".para1").toggle();
+                    });
+                    $("#btn1").on("mousedown",function(){
+                        $(".para1").toggle();
+                    });
+                    $("#btn1").on("mouseup",function(){
+                        $(".para1").toggle();
+                    });
+                    $("#btn1").click(function(e){
+                        alert(e.currentTarget.id);
+                        alert(e.currentTarget.innerHTML);
+                        alert(e.currentTarget.outerHTML);
+                        alert(e.currentTarget.className);
+                    });
+                    $(document).mousemove(function(e){
+                        //console.log(e.clientX+", "+e.clientY);
+                        $("#coords").html(e.clientX+", "+e.clientY);
+                    });
+                    $("input").focus(function(){
+                        //$("#name").hide();
+                        $(this).css("background","pink");
+                        //alert("Focus");
+                    });
+                    $("input").blur(function(){
+                        $(this).css("background","white");
+                    });
+                    $("input").keyup(function(e){
+                        $("#coords").html(e.target.value);
+                    });*/
+                    $("select#gender").change(function(e){
+                        //$("#coords").append("+");
+                        $("#coords").html(e.target.value);
+                    });
+                    $("#forma").submit(function(e){
+                        e.preventDefault();
+                        var name=$("input#name").val();
+                        $("#coords").html(name);
+                        //e.target.value
+                    });
+               });
+                
+            </script>
+    </body>
+</body>
+</html>

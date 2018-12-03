@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title>AngularJS | Filters</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+  </head>
+  <body ng-app="">
+    Your Name: <input type="text" ng-model="name"><br>
+    {{'Welcome '+name | uppercase}}<br>  
+    Welcome {{name | lowercase}}<br>
+    Pare {{name | currency:"hrk ":0}}<br>
+    Pare {{name | number:3}}<br>
+        <script>
+        </script>
+      </div>
+  </body>
+</html>
+
+<!--https://docs.angularjs.org/api
+    dokumentacija/help-->

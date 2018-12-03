@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Crash Course | selectors</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        body{
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            line-height: 1.5em;
+        }
+        header{
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px #000 solid;
+            margin-bottom: 10px;
+        }
+        #container {
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <header>
+            <h1>jQuery Crash Course | selectors</h1>
+        </header>
+        <div id='container'>
+                <h1 id="heding1">Heding 1</h1>
+                <p id='para1'>
+                        jQuery CDN
+                        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network).
+                        Both <span>Google and Microsoft</span> host jQuery.
+                        To use jQuery from Google or Microsoft, use one of the following:
+                </p>
+
+                <h1 class="heding2">Heding 2</h1>
+                <p class='para2'>
+                        jQuery CDN
+                        If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network).
+                        Both <span>Google and Microsoft</span> host jQuery.
+                        To use jQuery from Google or Microsoft, use one of the following:
+                </p>
+
+                <ul id="list">
+                        <li>List item</li>
+                        <li>List item</li>
+                        <li>List item</li>
+                        <li>List item</li>
+                        <li>List item</li>
+                        <li>List item</li>
+                        <li>List item</li>
+                    </ul>
+
+                    <input type="button" value="Button 1">
+                    <input type="submit" value="Button 1">
+                    <input type="text">
+                    <a href="http://www.google.com">Google</a>
+                    <a href="http://www.yahoo.com">Yahoo</a>
+                </div>
+        <script>
+            //$("H1").hide();               //element
+            //$("#heding1").hide();         //id
+            //$(".heding2").hide();         //class
+            //$(":text").hide();            //attribute
+            $("[href]").css('color','red'); //attribute
+            //$("[href='http://www.yahoo.com']").css('color','green'); //attribute s vrijednošću
+            //$("*").hide();                //all
+
+            $("p span").css('color','red');
+            $("ul#list li:first").css('color','red');
+            $("ul#list li:last").css('color','green');
+            $("ul#list li:even").css('background-color','yellow');
+            $("ul#list li:odd").css('background-color','#cccccc');
+            $("ul#list li:nth-child(3n)").css('list-style','none');
+            $("ul#list li:nth-child(3)").css('color','red');
+        </script>
+    </body>
+</body>
+</html>

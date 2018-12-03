@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>AngularJS | ToDo(1)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script src="script29.js"></script>
+    <style>
+      span.done-true{
+        color:gray;
+        font-style: italic;
+        text-decoration: line-through;
+      }
+      span[contenteditable="true"]{
+        background: lightcoral;
+        border: solid 2px red;
+      }
+    </style>
+  </head>
+  <body ng-app="mainApp" ng-controller="app">
+    <h1 id="naslov">AngularJS | ToDo(1)</h1>
+    <h1 style="text-align: center;">Add A Task</h1>
+    <input ng-model="task" ng-keyup="searchEnter()" type="text" style="display: block; margin: 0 auto;padding:5px;font-size: 15px; width: 300px" >
+    <div id="tasksToShow">
+      <ul>
+        <!-- <li ng-repeat="t in tasks | filter:'true' track by $index"> -->
+          <li ng-repeat="t in tasks | orderBy:['status','task'] track by $index">
+            <input ng-model="t.status" type="checkbox">
+            <span contenteditable="false" ng-dblclick="contentEdit(t.task)" ng-keydown="reenter(t.task)" ng-model="t.task" class="done-{{t.status}}">{{t.task}}-{{t.status}}</span>
+          </li>
+      </ul>
+    </div>
+  </body>
+</html>

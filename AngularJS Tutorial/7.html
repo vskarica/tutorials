@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="">
+  <head>
+    <title>AngularJS | ng-repeat</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+  </head>
+  <body>
+      <div ng-init="myFavLan=[
+      {name: 'PHP', extention: '.php'},
+      {name: 'HTML', extention: '.,html'},
+      {name: 'JavaScript', extention: '.js'}
+      ]">
+        <p ng-repeat="language in myFavLan">
+            Language: {{language.name}} <br>
+            Extention: {{language.extention}}
+        </p>
+
+      </div>
+  </body>
+</html>
+
+<!--https://docs.angularjs.org/api
+    dokumentacija/help-->

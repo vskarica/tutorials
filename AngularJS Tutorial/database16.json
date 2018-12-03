@@ -1,0 +1,29 @@
+{
+    "records":[
+        {
+            "Name":"Vedran",
+            "Age":"40",
+            "NajBoja":"crvena"
+        },
+        {
+            "Name":"Adela",
+            "Age":"38",
+            "NajBoja":"plava"
+        },
+        {
+            "Name":"Teo",
+            "Age":"13",
+            "NajBoja":"zelena"
+        },
+        {
+            "Name":"Iskra",
+            "Age":"1",
+            "NajBoja":"žuta"
+        },
+        {
+            "Name":"Anonimus",
+            "Age":"?",
+            "NajBoja":"??"
+        }
+    ]
+}

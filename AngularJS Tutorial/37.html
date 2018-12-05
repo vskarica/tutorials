@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>AngularJS | Custom filters</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script src="script37.js"></script>
+    <style>
+    </style>
+  </head>
+  <body ng-app="mainApp" ng-controller="app">
+    <h1 id="naslov">AngularJS | Custom filters)</h1>
+    <input type="text" ng-model="number"> -broj <br>
+    <input type="text" ng-model="baseNumber"> -baza<br>
+    Tvoj broj {{number}} u bazi {{baseNumber}} je {{number | base:baseNumber}}
+  </body>
+</html>

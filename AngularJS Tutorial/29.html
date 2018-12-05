@@ -25,10 +25,14 @@
       <ul>
         <!-- <li ng-repeat="t in tasks | filter:'true' track by $index"> -->
           <li ng-repeat="t in tasks | orderBy:['status','task'] track by $index">
-            <input ng-model="t.status" type="checkbox">
-            <span contenteditable="false" ng-dblclick="contentEdit(t.task)" ng-keydown="reenter(t.task)" ng-model="t.task" class="done-{{t.status}}">{{t.task}}-{{t.status}}</span>
+            <input ng-model="t.status" ng-change="saveData()" type="checkbox">
+            <span contenteditable="false" ng-dblclick="contentEdit(t.task)" ng-keydown="reenter(t.task)" ng-model="t.task" class="done-{{t.status}}">{{t.task}}</span>
+             | <span ng-click="delItem(t.task)">x</span>
+            <!-- <span>-{{t.status}}, {{$index}},  {{tasks.indexOf(task)}}.</span> -->
           </li>
       </ul>
     </div>
+    <span ng-click="delAll()">xX Del All Xx</span><br>
+    <span ng-click="osvjezi()">xX Refresh Xx</span>
   </body>
 </html>
